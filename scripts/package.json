@@ -1,0 +1,17 @@
+{
+  "name": "@bff/build-data",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "data": "node src/build-data.ts",
+    "lint": "oxlint src"
+  },
+  "dependencies": {
+    "@bff/schema": "workspace:*",
+    "effect": "^3.20.0"
+  },
+  "devDependencies": {
+    "vitest": "^4.0.0"
+  }
+}

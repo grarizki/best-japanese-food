@@ -1,0 +1,9 @@
+node_modules/
+dist/
+dist-server/
+deploy/
+*.log
+.DS_Store
+.env
+.venv/
+coverage/
