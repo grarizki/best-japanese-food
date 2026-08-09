@@ -70,7 +70,9 @@ onUnmounted(() => observer?.disconnect())
           {{ c.label }} <span class="ja">{{ c.ja }}</span>
         </button>
       </div>
+      <label class="visually-hidden" for="sort">Sort</label>
       <select
+        id="sort"
         class="sort"
         :value="state.sort"
         @change="

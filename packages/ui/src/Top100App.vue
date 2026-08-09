@@ -48,7 +48,9 @@ onUnmounted(() => observer?.disconnect())
     </header>
 
     <nav class="filters">
+      <label class="visually-hidden" for="section">List</label>
       <select
+        id="section"
         class="sort"
         :value="state.section"
         @change="
