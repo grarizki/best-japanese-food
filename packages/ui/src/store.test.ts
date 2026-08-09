@@ -1,3 +1,6 @@
+// Tests the store contract (initial state, mutation, subscribe/unsubscribe) —
+// the client side of the BFF seam. The pipeline side is covered by
+// packages/schema/src/schema.test.ts, so both ends of the seam have a check.
 import { describe, expect, it } from 'vitest'
 import { createEffectStore } from './store'
 

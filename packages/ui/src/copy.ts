@@ -1,3 +1,6 @@
+// All user-facing strings in one place, passed down as a single `copy` prop.
+// BFF lesson: content is data, not code. In a runtime BFF this is what a
+// per-locale copy endpoint would serve; here it is baked in at build time.
 export interface AppCopy {
   eyebrow: string
   hero: string

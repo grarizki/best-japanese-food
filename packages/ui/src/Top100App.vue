@@ -1,4 +1,7 @@
 <script setup lang="ts">
+// Same container pattern as FoodApp, but consumes named TopSection[] groups.
+// Reuses FoodCard unchanged: presentational components stay reusable when they
+// know nothing about where the data came from.
 import { computed, onMounted, onUnmounted, reactive, ref } from 'vue'
 import { FOOTER_ATTRIBUTION, type AppCopy } from './copy'
 import { createEffectStore } from './store'

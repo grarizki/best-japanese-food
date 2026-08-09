@@ -1,4 +1,8 @@
 <script setup lang="ts">
+// Container component ("the page"): receives data + copy via props — never
+// fetches or imports data, the pipeline/BFF already shaped it into UiRecord.
+// Owns only view state (city, sort, pagination) through the Effect store and
+// derives what to render with computed pipelines (filter → sort → slice).
 import { computed, onMounted, onUnmounted, reactive, ref } from 'vue'
 import type { UiRecord } from '@bff/schema'
 import { CITIES, FOOTER_ATTRIBUTION, type AppCopy } from './copy'

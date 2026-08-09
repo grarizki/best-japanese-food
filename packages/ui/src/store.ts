@@ -1,6 +1,8 @@
 // Effect-owned client state: a SubscriptionRef (observable ref from effect
 // core) is the single source of truth; the Vue component mirrors it via a
 // subscription to its changes stream. Mutations flow through Effect.
+// BFF lesson: this holds only VIEW state (filter/sort/pagination). Data itself
+// never lives here — it arrives pre-shaped via props from the pipeline.
 import { Effect, Fiber, Stream, SubscriptionRef } from 'effect'
 
 export interface EffectStore<T> {

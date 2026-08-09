@@ -1,4 +1,7 @@
 <script setup lang="ts">
+// Pure presentational component ("the view"): knows only UiRecord (the shared
+// BFF contract) and its own flip-animation state. All denormalization and
+// joining happened upstream in toUiRecord(); this only formats for display.
 import { ref } from 'vue'
 import type { UiRecord } from '@bff/schema'
 
