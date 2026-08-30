@@ -1,6 +1,6 @@
 # best-japanese-food
 
-Five static Vue apps serving the [japan-food-dataset](https://github.com/grarizki/japan-food-dataset),
+Six static Vue apps serving the [japan-food-dataset](https://github.com/grarizki/japan-food-dataset) and halal restaurant data,
 deployed to GitHub Pages at `https://grarizki.github.io/best-japanese-food/`.
 
 | App | Path | Data | Records |
@@ -10,23 +10,20 @@ deployed to GitHub Pages at `https://grarizki.github.io/best-japanese-food/`.
 | Budget Meat (no pork) | `/budget-meat/` | `budget_food_meat.json` | 2,847 |
 | Bakeries | `/bakeries/` | `bakeries.json` | 19 |
 | Most Recommended | `/top-100/` | `most_recommended.json` | 166 sections |
+| **Halal Restaurants** | `/halal/` | `halal-restaurants.json` | 43 |
 
-## Halal Restaurants
+## Halal Restaurants App
 
-Scraped halal and Muslim-friendly restaurants for Tokyo and Osaka in [`data/halal-restaurants.json`](data/halal-restaurants.json).
+New category: halal and Muslim-friendly restaurants in Tokyo and Osaka.
+Scraped from 7 directories (halalgourmet.jp, halalinjapan.com, muslim-guide.jp, tripadvisor, byfood.com, tokyoportfolio.com, myconciergejapan.com).
 
-| City | Records | Certification Types |
-|------|---------|-------------------|
-| Tokyo | 35 | halal_certified, muslim_friendly, halal_ingredients, halal_menu |
-| Osaka | 10 | halal_certified, muslim_friendly, halal_menu |
+Features: filter by prefecture (Tokyo/Osaka), certification type (Halal Certified/Muslim Friendly/Halal Menu), and search by name, cuisine, or area.
 
-Sources: halalgourmet.jp, halalinjapan.com, muslim-guide.jp, tripadvisor, byfood.com, tokyoportfolio.com, myconciergejapan.com.
-
-See [`data/README.md`](data/README.md) for full schema documentation and directory links.
+See [`data/README.md`](data/README.md) for full schema documentation.
 
 ## Architecture
 
-- **pnpm workspaces monorepo**: `packages/schema`, `packages/ui`, `scripts`, 5 `apps/*`, static `site/`.
+- **pnpm workspaces monorepo**: `packages/schema`, `packages/ui`, `scripts`, 6 `apps/*`, static `site/`.
 - **Effect data pipeline** (`scripts/src/build-data.ts`): reads `../japan-food-dataset/data/*.json`
   live, validates every record with Effect Schema (`@effect/schema`), prunes crawler-only fields,
   and emits typed per-app JSON into `apps/<slug>/src/generated/`. A schema mismatch fails the build.
@@ -43,7 +40,7 @@ See [`data/README.md`](data/README.md) for full schema documentation and directo
 pnpm install
 pnpm build:data   # reads ../japan-food-dataset/data (skip if generated/ is up to date)
 pnpm test         # unit tests — run before committing
-pnpm -r build     # builds + prerenders all 5 apps
+pnpm -r build     # builds + prerenders all 6 apps
 ```
 
 ## Deploy
