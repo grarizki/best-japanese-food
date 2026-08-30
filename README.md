@@ -11,13 +11,26 @@ deployed to GitHub Pages at `https://grarizki.github.io/best-japanese-food/`.
 | Bakeries | `/bakeries/` | `bakeries.json` | 19 |
 | Most Recommended | `/top-100/` | `most_recommended.json` | 166 sections |
 
+## Halal Restaurants
+
+Scraped halal and Muslim-friendly restaurants for Tokyo and Osaka in [`data/halal-restaurants.json`](data/halal-restaurants.json).
+
+| City | Records | Certification Types |
+|------|---------|-------------------|
+| Tokyo | 35 | halal_certified, muslim_friendly, halal_ingredients, halal_menu |
+| Osaka | 10 | halal_certified, muslim_friendly, halal_menu |
+
+Sources: halalgourmet.jp, halalinjapan.com, muslim-guide.jp, tripadvisor, byfood.com, tokyoportfolio.com, myconciergejapan.com.
+
+See [`data/README.md`](data/README.md) for full schema documentation and directory links.
+
 ## Architecture
 
 - **pnpm workspaces monorepo**: `packages/schema`, `packages/ui`, `scripts`, 5 `apps/*`, static `site/`.
 - **Effect data pipeline** (`scripts/src/build-data.ts`): reads `../japan-food-dataset/data/*.json`
   live, validates every record with Effect Schema (`@effect/schema`), prunes crawler-only fields,
   and emits typed per-app JSON into `apps/<slug>/src/generated/`. A schema mismatch fails the build.
-- **Effect in the frontend**: app state is owned by an Effect `SubscriptionRef` (observable ref +
+- **Effect in the frontend**: app state is owned by an Effect `SubscriptionRef` (observable ref + 
   changes stream); Vue components mirror it. No Redux/pinia.
 - **Performance**: zero runtime fetches (data bundled at build), prerendered first page of cards
   via `@vue/server-renderer`, inline CSS (no render-blocking request), content-hashed assets cached
@@ -52,5 +65,7 @@ and is baked into the prerendered HTML + meta tags.
 
 Ratings, review counts and saves from Tabelog. Railway and station data from
 MLIT National Land Numerical Information (国土数値情報).
+
+Halal restaurant data scraped from halalgourmet.jp and other halal food directories.
 
 See `TODO.md` for the planned Cloudflare (Hono + Effect) API iteration.
