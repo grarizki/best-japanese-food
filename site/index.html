@@ -33,6 +33,14 @@
       .n { font-size: 18px; font-weight: 600; }
       .d { font-size: 13px; color: #8a7f73; margin-top: 4px; }
       .arrow { color: #b07e2e; font-size: 20px; }
+      .halal-link { border-color: #16a34a33; }
+      .halal-link:hover { border-color: #16a34a; }
+      .halal-link .arrow { color: #16a34a; }
+      .halal-badge {
+        display: inline-block; font-size: 10px; letter-spacing: 0.08em;
+        background: #16a34a; color: #fff; padding: 2px 8px; border-radius: 8px;
+        margin-left: 8px; vertical-align: middle; font-weight: 600;
+      }
 
       /* Footer */
       footer {
@@ -130,6 +138,15 @@
             <span class="arrow">→</span>
           </a>
         </li>
+        <li>
+          <a href="/best-japanese-food/halal/" class="halal-link">
+            <div>
+              <div class="n">Halal Restaurants <span class="halal-badge">NEW</span></div>
+              <div class="d">45 halal &amp; Muslim-friendly spots in Tokyo &amp; Osaka</div>
+            </div>
+            <span class="arrow">→</span>
+          </a>
+        </li>
       </ul>
     </main>
 
@@ -140,7 +157,7 @@
           <ul>
             <li>Ratings from <a href="https://tabelog.com" target="_blank" rel="noopener">Tabelog</a></li>
             <li>Railway data from MLIT 国土数値情報</li>
-            <li>Halal restaurants from <a href="https://halalgourmet.jp" target="_blank" rel="noopener">Halal Gourmet Japan</a></li>
+            <li>Halal data from <a href="https://halalgourmet.jp" target="_blank" rel="noopener">Halal Gourmet Japan</a></li>
           </ul>
         </div>
         <div>
@@ -148,7 +165,7 @@
           <ul>
             <li><a href="https://github.com/grarizki/best-japanese-food" target="_blank" rel="noopener">Source on GitHub</a></li>
             <li><a href="https://github.com/grarizki/japan-food-dataset" target="_blank" rel="noopener">Japan Food Dataset</a></li>
-            <li><a href="https://github.com/grarizki/best-japanese-food/blob/main/data/halal-restaurants.json" target="_blank" rel="noopener">Halal Restaurant Data</a></li>
+            <li><a href="https://github.com/grarizki/best-japanese-food/tree/main/apps/halal" target="_blank" rel="noopener">Halal App Source</a></li>
           </ul>
         </div>
         <p class="copy">&copy; 2026 Best Japanese Food · Built with Vue, Effect &amp; Tabelog data</p>
