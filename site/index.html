@@ -53,7 +53,7 @@
         max-width: 760px;
         margin: 0 auto;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
         gap: 24px;
         font-size: 13px;
         line-height: 1.8;
@@ -70,6 +70,8 @@
       footer a { color: #5c5248; text-decoration: none; }
       footer a:hover { color: #b07e2e; }
       footer ul { list-style: none; margin: 0; display: grid; gap: 4px; }
+      footer .about-text { line-height: 1.7; }
+      footer .about-name { font-weight: 600; color: #2a211a; }
       footer .copy {
         grid-column: 1 / -1;
         border-top: 1px solid #e6dccd;
@@ -79,7 +81,7 @@
         color: #b5aa9c;
         text-align: center;
       }
-      @media (max-width: 520px) {
+      @media (max-width: 640px) {
         footer .inner { grid-template-columns: 1fr; }
       }
     </style>
@@ -167,6 +169,14 @@
             <li><a href="https://github.com/grarizki/japan-food-dataset" target="_blank" rel="noopener">Japan Food Dataset</a></li>
             <li><a href="https://github.com/grarizki/best-japanese-food/tree/main/apps/halal" target="_blank" rel="noopener">Halal App Source</a></li>
           </ul>
+        </div>
+        <div>
+          <h2>Built by</h2>
+          <p class="about-text">
+            <span class="about-name">Raka Grarizki</span><br />
+            Data enthusiast exploring Japan's food scene through numbers.<br />
+            <a href="https://github.com/grarizki" target="_blank" rel="noopener">github.com/grarizki</a>
+          </p>
         </div>
         <p class="copy">&copy; 2026 Best Japanese Food · Built with Vue, Effect &amp; Tabelog data</p>
       </div>
