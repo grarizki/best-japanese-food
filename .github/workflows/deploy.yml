@@ -43,6 +43,7 @@ jobs:
           cp -r apps/budget-meat/dist deploy/budget-meat
           cp -r apps/bakeries/dist deploy/bakeries
           cp -r apps/top-100/dist deploy/top-100
+          cp -r apps/halal/dist deploy/halal
           cp -r site/* deploy/
 
       - uses: actions/upload-pages-artifact@v3
