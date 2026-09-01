@@ -1,5 +1,5 @@
 import { createSSRApp } from 'vue'
-import { HalalApp } from './HalalApp.vue'
+import HalalApp from './HalalApp.vue'
 import { data } from './data'
 import { copy } from './copy'
 
